@@ -6,6 +6,7 @@ import { FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
 import useWindowResize from "../Hooks/UseWindowResize";
 
 import MainNav from "./MainNav";
+import List from "./List";
 
 import { Logo } from "./Logo";
 
@@ -13,6 +14,21 @@ import classes from "./Header.module.css";
 
 const Header = () => {
   const size = useWindowResize();
+
+  const listItems = [
+    {
+        title: <FaRegUser />,
+        linkTo: '#'
+    },
+    {
+        title: <FaMagnifyingGlass />,
+        linkTo: '#'
+    },
+    {
+        title: <IoBagOutline />,
+        linkTo: '#'
+    },
+  ]
 
   return (
     <header>
@@ -29,17 +45,7 @@ const Header = () => {
       </div>
 
       <div className={`${classes.nav} ${classes.icons}`}>
-        <ul>
-          <li>
-            <FaRegUser />
-          </li>
-          <li>
-            <FaMagnifyingGlass />
-          </li>
-          <li>
-            <IoBagOutline />
-          </li>
-        </ul>
+        <List listItems={listItems} />
       </div>
     </header>
   );
