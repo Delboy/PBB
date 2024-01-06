@@ -1,0 +1,40 @@
+.nav ul {
+    display: flex;
+    gap: 2.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: .9em;
+    letter-spacing: .1em;
+    cursor: pointer;
+}
+
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .nav {
+        width: 9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        width: 6rem;
+    }
+
+    .nav ul {
+        gap: 1.25rem;
+    }
+
+    .hamburger {
+        font-size: 1.75rem;
+    }
+}
