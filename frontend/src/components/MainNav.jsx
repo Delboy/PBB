@@ -10,6 +10,7 @@ import SideNav from "./SideNav";
 import Backdrop from "./Backdrop";
 
 import classes from "./MainNav.module.css";
+import { AnimatePresence } from "framer-motion";
 
 function MainNav() {
   const size = useWindowResize();
@@ -49,7 +50,12 @@ function MainNav() {
             className={classes.hamburger}
             onClick={hamburgerHandler}
           />
-          {sideNavOpen && <><Backdrop onClick={hamburgerHandler} /><SideNav onClick={hamburgerHandler} listItems={listItems} /></>}
+          <AnimatePresence>
+          {sideNavOpen && <Backdrop onClick={hamburgerHandler} open={sideNavOpen} />}
+          </AnimatePresence>
+          <AnimatePresence>
+          {sideNavOpen && <SideNav onClick={hamburgerHandler} listItems={listItems} />}
+          </AnimatePresence>
         </>
       )}
     </nav>

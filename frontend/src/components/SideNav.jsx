@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import List from "./List";
 
@@ -17,7 +18,13 @@ const SideNav = (props) => {
   ];
 
   return (
-    <div className={classes.sideNav}>
+    <motion.div
+      className={classes.sideNav}
+      initial={{ x: "-22rem" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-22rem" }}
+      transition={{type: "tween", ease: [0.645, 0.0045, 0.355, 1], duration: .5 }}
+    >
       <div className={classes.main}>
         <button className={classes.exit} onClick={props.onClick}>
           X
@@ -29,7 +36,7 @@ const SideNav = (props) => {
           <List listItems={subList} small />
         </nav>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
