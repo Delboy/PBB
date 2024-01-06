@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div style={{height: "200vh", paddingTop: "10rem"}}>
+    <div style={{height: "200vh"}}>
         <h1>Hero</h1>
         <h1>Testimonal slider</h1>
         <h1>Our Story</h1>

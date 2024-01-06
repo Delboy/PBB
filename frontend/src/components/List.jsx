@@ -1,11 +1,14 @@
 import React from "react";
 
+import { NavLink } from "react-router-dom";
+
 import classes from "./List.module.css";
 
 function List(props) {
   return (
     <ul className={classes.list} style={{gap: props.small ? ".5rem" : "2.5rem"}}>
       {props.listItems.map((listItem, index) => (
+        <NavLink to={listItem.linkTo}>
         <li
           key={index}
           className={`${props.divider ? classes.divider : null} ${
@@ -14,6 +17,7 @@ function List(props) {
         >
           {listItem.title}
         </li>
+        </NavLink>
       ))}
     </ul>
   );

@@ -1,4 +1,5 @@
-import { React, useState, useEffect} from "react";
+import { React, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import { IoBagOutline } from "react-icons/io5";
 import { FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
@@ -6,58 +7,74 @@ import { FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
 import useWindowResize from "../Hooks/UseWindowResize";
 
 import MainNav from "./MainNav";
-import Logo  from "./Logo";
+import Logo from "./Logo";
 import List from "./List";
-
 
 import classes from "./Header.module.css";
 
 const Header = () => {
   const size = useWindowResize();
+  const location = useLocation();
 
-  const [solidBg, setSolidBg] = useState(false);
-  
+  const [solidBg, setSolidBg] = useState(true);
+  const [onHome, setOnHome] = useState();
+
   const changeBg = () => {
-    if(window.scrollY <= 1 ){
-      setSolidBg(false)
-    } else { setSolidBg(true)}
+    if (onHome && window.scrollY <= 1) {
+      setSolidBg(false);
+    } else {
+      setSolidBg(true);
+    }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", changeBg);
   });
 
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setOnHome(true)
+      setSolidBg(false)
+      ;
+    } else {
+      setOnHome(false)
+      setSolidBg(true);
+    }
+  }, [location]);
 
   const mouseOverHandler = () => {
-    if(!solidBg){
-      setSolidBg(true)
+    if (onHome && !solidBg) {
+      setSolidBg(true);
     }
-  }
+  };
 
   const mouseLeaveHandler = () => {
-    if(window.scrollY === 0)
-    {
-      setSolidBg(false)
+    if (onHome && window.scrollY === 0) {
+      setSolidBg(false);
     }
-  }
+  };
 
   const listItems = [
     {
-        title: <FaRegUser />,
-        linkTo: '#'
+      title: <FaRegUser />,
+      linkTo: "/profile",
     },
     {
-        title: <FaMagnifyingGlass />,
-        linkTo: '#'
+      title: <FaMagnifyingGlass />,
+      linkTo: "#",
     },
     {
-        title: <IoBagOutline />,
-        linkTo: '#'
+      title: <IoBagOutline />,
+      linkTo: "#",
     },
-  ]
+  ];
 
   return (
-    <header className={solidBg ? classes.solidBg : null} onMouseOver={mouseOverHandler} onMouseLeave={mouseLeaveHandler}>
+    <header
+      className={solidBg ? classes.solidBg : null}
+      onMouseOver={mouseOverHandler}
+      onMouseLeave={mouseLeaveHandler}
+    >
       <div className={classes.leftSection}>
         <div style={{ display: size.width < 1200 ? "none" : null }}>
           <Logo />

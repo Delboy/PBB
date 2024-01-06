@@ -24,19 +24,19 @@ function MainNav() {
   const listItems = [
     {
         title: "Home",
-        linkTo: '#'
+        linkTo: '/'
     },
     {
         title: "Shop",
-        linkTo: '#'
+        linkTo: '/shop'
     },
     {
         title: "About",
-        linkTo: '#'
+        linkTo: '/about'
     },
     {
         title: "Contact",
-        linkTo: '#'
+        linkTo: '/contact'
     },
   ]
 
