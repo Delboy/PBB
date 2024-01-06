@@ -17,15 +17,41 @@ const SideNav = (props) => {
     },
   ];
 
+  const animation = {
+    initial: { x: "-22rem" },
+    animate: {
+      x: 0,
+      transition: {
+        type: "tween",
+        ease: [0.645, 0.0045, 0.355, 1],
+        duration: 0.5,
+      },
+    },
+    exit: {
+      x: "-22rem",
+      transition: {
+        type: "tween",
+        ease: [0.645, 0.0045, 0.355, 1],
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <motion.div
       className={classes.sideNav}
-      initial={{ x: "-22rem" }}
-      animate={{ x: 0 }}
-      exit={{ x: "-22rem" }}
-      transition={{type: "tween", ease: [0.645, 0.0045, 0.355, 1], duration: .5 }}
+      variants={animation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
-      <div className={classes.main}>
+      <motion.div
+        className={classes.main}
+        variants={animation}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
         <button className={classes.exit} onClick={props.onClick}>
           X
         </button>
@@ -35,7 +61,7 @@ const SideNav = (props) => {
         <nav className={classes.subNav}>
           <List listItems={subList} small />
         </nav>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
