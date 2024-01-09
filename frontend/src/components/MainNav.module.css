@@ -1,3 +1,7 @@
+.nav {
+    font-weight: 600;
+}
+
 .hamburger {
     font-size: 2rem;
     cursor: pointer;

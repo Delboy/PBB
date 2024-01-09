@@ -1,0 +1,81 @@
+.main {
+  height: 47vw;
+  width: 100vw;
+}
+
+.imgContainer {
+  height: 100%;
+  overflow: hidden;
+
+  background-color: var(--main-black);
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.buttonWrapper {
+    position: relative;
+    bottom: 7rem;
+    left: 5rem;
+
+    height: fit-content;
+    width: fit-content;
+ 
+}
+
+.button {
+  padding: .75rem 1.75rem;
+  background-color: white;
+  border: 1px solid lightgrey;
+
+  text-transform: uppercase;
+  font-size: .9em;
+  letter-spacing: 1px;
+  color: rgb(31, 31, 31);
+}
+
+.dots {
+    display: flex;
+    gap: .5rem;
+    position: relative;
+    bottom: 6rem;
+    right: 5rem;
+    float: right;
+}
+
+.dot {
+    border: 2px solid white;
+    height: .75rem;
+    width: .75rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: all 500ms ease;
+}
+
+.filled {
+    background-color: white;
+}
+
+
+@media (max-width: 1000px) {
+    .buttonWrapper {
+        left: 1.5rem
+    }
+
+    .dots { 
+      float: left;
+      left: 1.5rem;
+      bottom: 5.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .main {
+        height: 150vw;
+    }
+}
