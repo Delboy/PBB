@@ -1,0 +1,45 @@
+.main {
+    position: relative;
+    height: 26rem;
+    width: 16rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin: 1rem;
+    box-shadow: 0 2px 7px rgba(0,0,0,.06),0 4px 20px rgba(0,0,0,.08);
+
+}
+
+.imageContainer {
+    height: 12rem;
+    width: 100%;
+}
+
+.imageContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10.5rem;
+    left: 3rem;
+    height: 3rem;
+    width: 10rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 7px rgba(0,0,0,.06),0 4px 20px rgba(0,0,0,.08);
+    font-size: 1.5rem;
+}
+
+.rating span {
+    display: flex;
+}
+
+.reviewContainer {
+    text-align: center;
+    padding: 2.25rem 1rem;
+}

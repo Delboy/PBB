@@ -52,7 +52,7 @@ const HeroCarousel = () => {
 
   const setImage = (value) => {
     resetTimer();
-    setIndex(value)
+    setIndex(value);
   };
 
   const nextImage = useCallback(() => {
