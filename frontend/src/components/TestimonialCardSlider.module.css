@@ -1,8 +1,8 @@
 .main {
-  width: 100%;  
+  width: 100%;
   max-width: 68rem;
   margin: 1rem auto;
-  height: fit-content;
+  height: 110%;
 }
 
 .cardWrapper {
@@ -11,6 +11,7 @@
   display: flex;
   align-self: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .button {
@@ -22,36 +23,42 @@
 .controls {
   display: flex;
   justify-content: space-between;
-  width: 105%;  
+  width: 105%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   bottom: 14rem;
   z-index: 5;
+
+  pointer-events: none;
 }
 
 .controls button {
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    padding: 0;
-    border: none;
-    box-shadow: 0 2px 7px rgba(0,0,0,.06),0 4px 20px rgba(0,0,0,.08);
-    background-color: white;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  padding: 0;
+  border: none;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.06), 0 4px 20px rgba(0, 0, 0, 0.08);
+  background-color: white;
+
+  pointer-events: all;
 }
 
+
+
 @media (max-width: 1272px) {
-    .main {
-        width: 90%;
-    }
+  .main {
+    width: 90%;
+  }
 }
 
 @media (max-width: 530px) {
-    .controls {
-        display: none;
-    }
+  .controls {
+    display: none;
+  }
 
-    .main {
-        width: 100%;
-    }
+  .main {
+    width: 100%;
+  }
 }

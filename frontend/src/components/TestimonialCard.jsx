@@ -1,6 +1,7 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
-import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa'
+import Rating from './Rating'
 
 import classes from './TestimonialCard.module.css'
 
@@ -19,32 +20,18 @@ const TestimonialCard = (props) => {
   let fullName = `${firstName} ${lastInitial}.`
   
   return (
-    <div className={classes.main}>
+    <motion.div className={classes.main} whileHover={{y: -10}}>
         <div className={classes.imageContainer}>
             <img src={props.image} alt={"product"} />
         </div>
         <div className={classes.rating}>
-          <span>
-            { props.rating >= 1 ? <FaStar /> : props.rating >= 0.5 ? <FaStarHalfAlt /> : <FaRegStar />}
-          </span>
-          <span>
-            { props.rating >= 2 ? <FaStar /> : props.rating >= 1.5 ? <FaStarHalfAlt /> : <FaRegStar />}
-          </span>
-          <span>
-            { props.rating >= 3 ? <FaStar /> : props.rating >= 2.5 ? <FaStarHalfAlt /> : <FaRegStar />}
-          </span>
-          <span>
-            { props.rating >= 4 ? <FaStar /> : props.rating >= 3.5 ? <FaStarHalfAlt /> : <FaRegStar />}
-          </span>
-          <span>
-            { props.rating >= 5 ? <FaStar /> : props.rating >= 4.5 ? <FaStarHalfAlt /> : <FaRegStar />}
-          </span>
+          <Rating rating={props.rating} />
         </div>
         <div className={classes.reviewContainer}>
             <p>{fullName}</p>
             <p>{review}</p>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

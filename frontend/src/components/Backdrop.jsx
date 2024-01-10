@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import classes from "./Backdrop.module.css";
 
-function Backdrop(props) {
+const Backdrop = (props) => {
   return (
     <motion.div
       className={classes.backdrop}
@@ -11,6 +11,7 @@ function Backdrop(props) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{duration: .5}}
+      
     ></motion.div>
   );
 }
