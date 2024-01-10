@@ -1,6 +1,7 @@
 .main {
   height: 47vw;
-  width: 100vw;
+  width: 100%;
+  position: relative;
 }
 
 .imgContainer {
@@ -41,8 +42,8 @@
 .dots {
     display: flex;
     gap: .5rem;
-    position: relative;
-    bottom: 6rem;
+    position: absolute;
+    bottom: 2rem;
     right: 5rem;
     float: right;
 }
@@ -70,7 +71,7 @@
     .dots { 
       float: left;
       left: 1.5rem;
-      bottom: 5.5rem;
+      bottom: 1.5rem;
     }
 }
 

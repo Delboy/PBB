@@ -1,12 +1,10 @@
 .main {
     position: relative;
     height: 26rem;
-    width: 16rem;
+    width: 100%;
     overflow: hidden;
     border-radius: 1rem;
-    margin: 1rem;
     box-shadow: 0 2px 7px rgba(0,0,0,.06),0 4px 20px rgba(0,0,0,.08);
-
 }
 
 .imageContainer {
@@ -26,7 +24,8 @@
     justify-content: center;
     position: absolute;
     top: 10.5rem;
-    left: 3rem;
+    left: 50%;
+    transform: translate(-50%, 0);
     height: 3rem;
     width: 10rem;
     background-color: white;

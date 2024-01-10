@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Montserrat:wght@100;400;700&display=swap');
 
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 
 body {
   margin: 0;
@@ -25,5 +32,3 @@ a {
   --main-black: #1c1b1b;
   --main-grey: rgb(65, 65, 65);
 }
-
-

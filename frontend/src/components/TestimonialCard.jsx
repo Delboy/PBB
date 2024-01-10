@@ -6,7 +6,7 @@ import classes from './TestimonialCard.module.css'
 
 const TestimonialCard = (props) => {
 
-  const reviewCutOff = 120
+  const reviewCutOff = 100
   let review = props.review;
   if(review.length > reviewCutOff){
     review = review.substring(0, reviewCutOff) + '...' 
