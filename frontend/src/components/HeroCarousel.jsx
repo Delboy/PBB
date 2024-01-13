@@ -90,10 +90,10 @@ const HeroCarousel = () => {
   return (
     <div className={classes.main}>
       <div className={classes.imgContainer}>
-        <AnimatePresence type="crossfade" mode="crossfade">
+        <AnimatePresence type="crossfade" >
           <motion.img
             src={heroItems[index].image}
-            key={heroItems[index]}
+            key={heroItems[index].image}
             alt="slides"
             className={classes.img}
             initial={{
