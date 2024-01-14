@@ -90,7 +90,7 @@ const HeroCarousel = () => {
   return (
     <div className={classes.main}>
       <div className={classes.imgContainer}>
-        <AnimatePresence type="crossfade" >
+        <AnimatePresence>
           <motion.img
             src={heroItems[index].image}
             key={heroItems[index].image}

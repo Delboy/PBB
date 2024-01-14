@@ -10,17 +10,21 @@
   display: flex;
   position: relative;
   height: 30rem;
+  overflow: hidden;
 }
 
 .imageContainer {
   width: 50%;
   height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .image {
   object-fit: cover;
+  object-position: center;
   height: 100%;
-  width: 100%;
+  width: 120%;
 }
 
 .bold {

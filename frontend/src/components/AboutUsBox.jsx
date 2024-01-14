@@ -105,11 +105,27 @@ const AboutUsBox = () => {
     <div className={classes.container}>
       <div className={classes.main}>
         <div className={classes.imageContainer}>
-          <img
-            className={classes.image}
-            src={data[index].image}
-            alt={data[index.title]}
-          />
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.img
+              key={data[index].image}
+              className={classes.image}
+              src={data[index].image}
+              alt={data[index.title]}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+              exit={{
+                opacity: 0,
+                x: -100,
+              }}
+              transition={{
+                duration: 0.5,
+                ease: [0.645, 0.045, 0.355, 1],
+              }}
+            />
+          </AnimatePresence>
         </div>
         <div className={classes.textContainer}>
           <div className={classes.wrapper}>
