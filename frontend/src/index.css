@@ -2,10 +2,16 @@
 
 html {
   box-sizing: border-box;
+  
+}
+
+*::-webkit-scrollbar {
+  display: none;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
+  scrollbar-width: none;
 }
 
 body {
