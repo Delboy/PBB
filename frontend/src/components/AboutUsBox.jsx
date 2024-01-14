@@ -128,7 +128,7 @@ const AboutUsBox = () => {
           </AnimatePresence>
         </div>
         <div className={classes.textContainer}>
-          <div className={classes.wrapper}>
+          <div className={classes.scrollWrapper}>
             <h6>{data[index].title}</h6>
             <h4>{data[index].header}</h4>
             {data[index].details}
