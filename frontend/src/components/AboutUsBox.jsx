@@ -97,6 +97,21 @@ const AboutUsBox = () => {
     </AnimatePresence>
   );
 
+  const container = {
+    animate: {
+      transition: {
+        staggerChildren: .05,
+        delayChildren: .5,
+      },
+    },
+  };
+
+  const item = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1, transition: { type: "tween", duration: .5 }},
+    exit: { opacity: 0}
+  };
+
   const onClickHandler = (e) => {
     setIndex(e.target.value);
   };
@@ -128,11 +143,20 @@ const AboutUsBox = () => {
           </AnimatePresence>
         </div>
         <div className={classes.textContainer}>
-          <div className={classes.scrollWrapper}>
-            <h6>{data[index].title}</h6>
-            <h4>{data[index].header}</h4>
-            {data[index].details}
-          </div>
+        <AnimatePresence>
+          <motion.div
+            className={classes.scrollWrapper}
+            variants={container}
+            key={data[index].title}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            <motion.h6 variants={item}>{data[index].title}</motion.h6>
+            <motion.h4 variants={item}>{data[index].header}</motion.h4>
+            <motion.div variants={item}>{data[index].details}</motion.div>
+          </motion.div>
+        </AnimatePresence>
         </div>
       </div>
       <div className={classes.selectionBar}>
