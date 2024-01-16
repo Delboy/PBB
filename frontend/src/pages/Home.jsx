@@ -5,6 +5,7 @@ import TestimonialCardSlider from '../components/TestimonialCardSlider'
 import AboutUsBox from '../components/AboutUsBox'
 import Product3dCarousel from '../components/Product3dCarousel'
 import FavouritesSlider from '../components/FavouritesSlider'
+import CategoriesLink from '../components/CategoriesLink'
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
         <AboutUsBox />
         <Product3dCarousel />
         <FavouritesSlider />
-        <h1>Catogories</h1>
+        <CategoriesLink />
         <h1>Simple Testomonies</h1>
 
     </div>
