@@ -1,0 +1,38 @@
+.main {
+    margin: 2rem auto;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: 100;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selector {
+    display: flex;
+    position: relative;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.btnWrapper {
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+}
+
+.selector button {
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 1.25rem;
+}
+
+.underline {
+    height: 2px;
+    background-color: black;
+}

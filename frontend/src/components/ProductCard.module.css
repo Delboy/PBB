@@ -1,0 +1,27 @@
+.main {
+    height: 15rem;
+    width: 100%;
+}
+
+.imageWrapper {
+    height: 80%;
+}
+
+.imageWrapper img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.productInfo {
+    text-align: center;
+}
+
+.productInfo p {
+    margin: 0;
+    font-size: .75rem;
+}
+
+.productInfo p:last-child {
+    color: rgb(124, 124, 124);
+}

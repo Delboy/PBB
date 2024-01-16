@@ -4,6 +4,7 @@ import HeroCarousel from '../components/HeroCarousel'
 import TestimonialCardSlider from '../components/TestimonialCardSlider'
 import AboutUsBox from '../components/AboutUsBox'
 import Product3dCarousel from '../components/Product3dCarousel'
+import FavouritesSlider from '../components/FavouritesSlider'
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
         <TestimonialCardSlider />
         <AboutUsBox />
         <Product3dCarousel />
-        <h1>Favourites</h1>
+        <FavouritesSlider />
         <h1>Catogories</h1>
         <h1>Simple Testomonies</h1>
 
