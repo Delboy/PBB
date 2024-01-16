@@ -1,0 +1,90 @@
+.swiper {
+  width: 100%;
+  max-width: 70rem;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiperSlide {
+  background-position: center;
+  background-size: cover;
+  width: 20rem;
+  height: 20rem;
+  overflow: hidden;
+}
+
+.flexCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+
+  height: 20rem;
+  width: 20rem;
+
+  opacity: 0;
+  transition: all 300ms ease;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.overlayBackground {
+  position: absolute;
+  height: 17rem;
+  width: 100%;
+  background-color: black;
+  color: white;
+  opacity: 0.5;
+
+  transition: all 300ms ease;
+}
+
+.productInfo {
+  height: 17rem;
+  color: white;
+  z-index: 1;
+}
+
+.productLink {
+  height: 3rem;
+  width: 100%;
+  opacity: 1;
+
+  background-color: black;
+  color: white;
+  z-index: 1;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.swiperSlide img {
+  object-fit: fill;
+  display: block;
+  height: 100%;
+  transition: all 300ms ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+.nextInLine {
+  opacity: 0.5;
+}
+
+.unactive {
+  opacity: 0.1;
+}
