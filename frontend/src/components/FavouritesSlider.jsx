@@ -1,5 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from 'react-router-dom'
 
 import SliderWithControls from "./SliderWithControls";
 
@@ -9,7 +10,7 @@ import classes from "./FavouritesSlider.module.css";
 
 const FavouritesSlider = () => {
   const [gender, setGender] = useState("F");
-  const [filteredList, setFilteredList] = useState([])
+  const [filteredList, setFilteredList] = useState([]);
 
   const onClickHandler = (e) => {
     setGender(e.target.value);
@@ -32,15 +33,14 @@ const FavouritesSlider = () => {
   );
 
   useEffect(() => {
-    setFilteredList([])
+    setFilteredList([]);
 
-    products.forEach(product => {
-      if(product.gender === gender){
-        setFilteredList(prevState => [...prevState, product])
+    products.forEach((product) => {
+      if (product.gender === gender) {
+        setFilteredList((prevState) => [...prevState, product]);
       }
-    })
-    
-  },[gender])
+    });
+  }, [gender]);
 
   return (
     <div className={classes.main}>
@@ -80,6 +80,12 @@ const FavouritesSlider = () => {
           <SliderWithControls data={filteredList} productCard />
         </motion.div>
       </AnimatePresence>
+
+      <div className={classes.collectionLink}>
+        <Link to={'/shop'}>
+          <button>View Collection</button>
+        </Link>
+      </div>
     </div>
   );
 };
