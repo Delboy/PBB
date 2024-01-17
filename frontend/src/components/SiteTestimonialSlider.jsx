@@ -25,9 +25,9 @@ const SiteTestimonialSlider = () => {
 
   return (
     <div className={classes.main}>
-      <Slider siteTestimonial data={data} pagination autoplay={true} slidesPerView={1} />;
+      <Slider siteTestimonial data={data} pagination autoplay={true} slidesPerView={1} />
     </div>
-  );
+  )
 };
 
 export default SiteTestimonialSlider;

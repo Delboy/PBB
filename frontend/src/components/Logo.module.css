@@ -20,3 +20,8 @@
     bottom: 5px;
     font-size: .75rem;
 }
+
+.footer {
+    color: rgb(65, 65, 65) !important;
+    margin-top: -1.1rem;
+}

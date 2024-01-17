@@ -10,7 +10,7 @@ import SiteTestimonialSlider from '../components/SiteTestimonialSlider'
 
 const Home = () => {
   return (
-    <div style={{height: "200vh"}}>
+    <>
         <HeroCarousel />
         <TestimonialCardSlider />
         <AboutUsBox />
@@ -18,8 +18,7 @@ const Home = () => {
         <FavouritesSlider />
         <CategoriesLink />
         <SiteTestimonialSlider />
-
-    </div>
+    </>
   )
 }
 

@@ -3,11 +3,11 @@ import {NavLink} from 'react-router-dom'
 
 import classes from './Logo.module.css'
 
-const Logo = () => {
+const Logo = (props) => {
   return (
     <NavLink to={'/'}>
     <div
-      className={classes.logo}
+      className={`${classes.logo} ${props.footer ? classes.footer : null}`}
     >
       <div className={classes.logo__main}>PBB</div>
       <div className={classes.logo__sub}>plant based boutique</div>

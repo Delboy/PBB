@@ -7,9 +7,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 4rem;
+    height: 4.5rem;
     width: 100vw;
-    padding: 0 4rem;
+    padding: 0 4rem .5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0);
 
     transition: all 500ms ease;   

@@ -1,0 +1,23 @@
+.table {
+    color: rgb(100, 100, 100)
+}
+
+.table th {
+    width: 5rem;
+    font-size: .9rem;
+    font-weight: 100;
+}
+
+.table td {
+    font-size: .8rem;
+}
+
+.icons {
+    display: flex;
+    gap: .75rem;
+    padding-top: .2rem;
+}
+
+.icons svg {
+    font-size: 1rem;
+}
