@@ -37,3 +37,7 @@ a {
   --main-black: #1c1b1b;
   --main-grey: rgb(65, 65, 65);
 }
+
+.swiper-pagination-bullet {
+  background: black !important;
+}

@@ -3,8 +3,8 @@ import { React } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import SliderWithControls from "./SliderWithControls";
-
+import Slider from "./Slider";
+import TestimonialCard from "./TestimonialCard";
 import hero1 from "../assets/images/hero-shoes-1.jpg";
 
 const TestimonialCardSlider = (props) => {
@@ -70,7 +70,9 @@ const TestimonialCardSlider = (props) => {
 
   return (
     <>
-      <SliderWithControls data={dummyData} testimonialCard></SliderWithControls>
+      <Slider data={dummyData} testimonialCard controls>
+        <TestimonialCard image name review rating />
+      </Slider>
     </>
   );
 };

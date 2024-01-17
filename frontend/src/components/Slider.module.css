@@ -10,7 +10,6 @@
   display: flex;
   align-self: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 .button {
@@ -42,6 +41,42 @@
 
   pointer-events: all;
 }
+
+.coverFlowSwiper {
+  width: 100%;
+  max-width: 70rem;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+.coverFlowSwiperSlide {
+  background-position: center;
+  background-size: cover;
+  width: 20rem;
+  height: 20rem !important;
+  overflow: hidden;
+}
+
+.coverFlowSwiperSlide img {
+  object-fit: fill;
+  display: block;
+  height: 100%;
+  transition: all 300ms ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+.nextInLine {
+  opacity: 0.5;
+}
+
+.unactive {
+  opacity: 0.1;
+}
+
 
 @media (max-width: 1272px) {
   .main {

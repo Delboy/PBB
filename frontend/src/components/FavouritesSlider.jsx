@@ -1,8 +1,8 @@
 import { React, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-import SliderWithControls from "./SliderWithControls";
+import Slider from "./Slider";
 
 import products from "../products";
 
@@ -77,12 +77,20 @@ const FavouritesSlider = () => {
             y: { duration: 0.8 },
           }}
         >
-          <SliderWithControls data={filteredList} productCard />
+          <Slider
+            data={filteredList}
+            productCard
+            controls
+            slidesPerViewSm={2}
+            slidesPerViewMd={3}
+            slidesPerViewLg={4}
+            slidesPerViewXl={6}
+          />
         </motion.div>
       </AnimatePresence>
 
       <div className={classes.collectionLink}>
-        <Link to={'/shop'}>
+        <Link to={"/shop"}>
           <button>View Collection</button>
         </Link>
       </div>

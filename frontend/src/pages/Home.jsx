@@ -6,6 +6,7 @@ import AboutUsBox from '../components/AboutUsBox'
 import Product3dCarousel from '../components/Product3dCarousel'
 import FavouritesSlider from '../components/FavouritesSlider'
 import CategoriesLink from '../components/CategoriesLink'
+import SiteTestimonialSlider from '../components/SiteTestimonialSlider'
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
         <Product3dCarousel />
         <FavouritesSlider />
         <CategoriesLink />
-        <h1>Simple Testomonies</h1>
+        <SiteTestimonialSlider />
 
     </div>
   )
