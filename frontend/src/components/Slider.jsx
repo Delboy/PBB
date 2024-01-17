@@ -8,7 +8,6 @@ import {
 } from "swiper/modules";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 import TestimonialModal from "./TestimonialModal";
 import TestimonialCard from "./TestimonialCard";
@@ -125,13 +124,7 @@ const Slider = (props) => {
                   />
                 )}
                 {props.productCard && (
-                  <Link to={"/shop"}>
-                    <ProductCard
-                      name={d.name}
-                      price={d.price}
-                      image={d.image}
-                    />
-                  </Link>
+                  <ProductCard name={d.name} price={d.price} image={d.image} id={d.id} />
                 )}
                 {props.siteTestimonial && (
                   <SiteTestimonialCard

@@ -37,6 +37,7 @@ const FavouritesSlider = () => {
 
     products.forEach((product) => {
       if (product.gender === gender) {
+        console.log(product.id)
         setFilteredList((prevState) => [...prevState, product]);
       }
     });

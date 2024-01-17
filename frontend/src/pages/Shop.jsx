@@ -1,10 +1,13 @@
 import React from 'react'
 
+import CategoriesLink from '../components/CategoriesLink'
+import ProductList from '../components/ProductList'
+
 const Shop = () => {
   return (
     <>
-    <h1>Catagories</h1>
-    <h1>Product list</h1>
+    <CategoriesLink />
+    <ProductList />
     <h1>Recently viewed</h1>
     </>
   )
