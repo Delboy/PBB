@@ -1,10 +1,12 @@
 import { React } from "react";
 
+import FetchProducts from "../Hooks/FetchProducts";
 import Slider from "./Slider";
 
-import products from "../products";
-
 const Product3dCarousel = () => {
+
+  const products = FetchProducts()
+
   return (
     <Slider
       data={products}

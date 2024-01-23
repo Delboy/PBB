@@ -2,13 +2,15 @@ import { React, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
+import FetchProducts from "../Hooks/FetchProducts";
 import Slider from "./Slider";
-
-import products from "../products";
 
 import classes from "./FavouritesSlider.module.css";
 
 const FavouritesSlider = () => {
+
+  const products = FetchProducts();
+
   const [gender, setGender] = useState("F");
   const [filteredList, setFilteredList] = useState([]);
 
@@ -37,11 +39,10 @@ const FavouritesSlider = () => {
 
     products.forEach((product) => {
       if (product.gender === gender) {
-        console.log(product.id)
         setFilteredList((prevState) => [...prevState, product]);
       }
     });
-  }, [gender]);
+  }, [products, gender]);
 
   return (
     <div className={classes.main}>

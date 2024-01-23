@@ -49,10 +49,11 @@ const ProductDetails = (props) => {
         </div>
         <div className={classes.cartForm}>
           <p>{Product.category === "shoes" ? "UK Size:" : null}</p>
-          {Product.sizes.length > 1 && (
+          {Product.sizes && (
             <div className={classes.sizes}>
               {Product.sizes.map((size) => (
                 <p
+                  key={size}
                   className={classes.sizeSelection}
                   onClick={selectionHandler.bind("", size)}
                   style={{
