@@ -56,10 +56,10 @@ const SideNav = (props) => {
           X
         </button>
         <nav className={classes.mainNav}>
-          <List listItems={props.listItems} divider />
+          <List listItems={props.listItems} divider onClick={props.onClick}/>
         </nav>
         <nav className={classes.subNav}>
-          <List listItems={subList} small />
+          <List listItems={subList} small  onClick={props.onClick}/>
         </nav>
       </motion.div>
     </motion.div>
