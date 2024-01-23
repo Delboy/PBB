@@ -1,0 +1,144 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    width: 100%;
+}
+
+.imageContainer {
+    padding: 1rem 2rem;
+    width: 60%;
+    height: 40vw;
+}
+
+.imageContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.details {
+    width: 30rem;
+    padding-right: 1rem;
+    color: rgb(30, 30, 30);
+}
+
+.rating {
+    display: flex;
+    gap: .5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.info {
+    padding-top: 1rem;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.info p:nth-child(1) {
+    color: green;
+    font-size: .8rem;
+}
+
+.info p:nth-child(1), .info p:nth-child(2) {
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+
+.info p:nth-child(2) {
+    font-size: 1.1rem;
+    font-weight: 500;
+    word-spacing: .3rem;
+    margin-bottom: 1rem;
+}
+
+.info p:nth-child(3) {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid lightgrey;
+}
+
+.info p:nth-child(4) {
+    border: 1px solid red;
+}
+
+.sizes {
+    display: flex;
+    gap: 1rem;
+}
+
+.sizeSelection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: grey;
+    border: 1px solid lightgray;
+    height: 2.5rem;
+    padding: 1rem;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.qtyBtn, .cartBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    width: 9rem;
+    color: grey;
+}
+
+.qtyBtn button, .qtyBtn p {
+    padding: .5rem 1rem;
+    width: 33.3%;
+}
+
+.qtyBtn button {
+    background: none;
+    border: none;
+}
+
+.qtyBtn p {
+    margin-bottom: 0;
+    color: black
+}
+
+.cartBtn {
+    margin-top: 1rem;
+    padding: .75rem 0;
+    font-size: .9rem;
+    background: none;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1000px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .imageContainer {
+        width: 100%;
+        height: 100vw;
+        padding: 1rem;
+    }
+
+    .details {
+        width: 100%;
+        max-width: 30rem;
+        padding: 1rem;
+    }
+
+    .rating {
+        margin: 1.5rem 0;
+    }
+
+    .info p:nth-child(1), .info p:nth-child(2), .info p:nth-child(3) {
+        text-align: center;
+    }
+}
