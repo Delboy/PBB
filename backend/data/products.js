@@ -1,6 +1,5 @@
 const products = [
   {
-    id: "1",
     name: "Test Product 1",
     image: "https://picsum.photos/600/600",
     description:
@@ -10,11 +9,11 @@ const products = [
     price: 99.99,
     hasSize: true,
     rating: 4.5,
-    reviewCount: 12,
+    countInStock: 10,
+    numReview: 12,
     sizes: [8, 9, 10, 11, 12, 13],
   },
   {
-    id: "2",
     name: "Test Product 2",
     image: "https://picsum.photos/600/600",
     description:
@@ -24,11 +23,11 @@ const products = [
     price: 9.99,
     hasSize: true,
     rating: 5,
-    reviewCount: 10,
+    countInStock: 10,
+    numReview: 10,
     sizes: [8, 9, 10, 11, 12],
   },
   {
-    id: "3",
     name: "Test Product 3",
     image: "https://picsum.photos/600/600",
     description:
@@ -38,11 +37,11 @@ const products = [
     price: 49.99,
     hasSize: true,
     rating: 3,
-    reviewCount: 12,
+    countInStock: 10,
+    numReview: 12,
     sizes: [8, 9, 10],
   },
   {
-    id: "4",
     name: "Test Product 4",
     image: "https://picsum.photos/600/600",
     description:
@@ -52,11 +51,11 @@ const products = [
     price: 79.99,
     hasSize: true,
     rating: 4.5,
-    reviewCount: 12,
+    countInStock: 10,
+    numReview: 12,
     sizes: [8, 9, 10, 11, 12, 13],
   },
   {
-    id: "5",
     name: "Test Product 5",
     image: "https://picsum.photos/600/600",
     description:
@@ -66,11 +65,11 @@ const products = [
     price: 9.99,
     hasSize: false,
     rating: 3.5,
-    reviewCount: 5,
+    countInStock: 10,
+    numReview: 5,
     sizes: ["300ml", "500ml"],
   },
   {
-    id: "6",
     name: "Test Product 6",
     image: "https://picsum.photos/600/600",
     description:
@@ -80,11 +79,11 @@ const products = [
     price: 4.99,
     hasSize: false,
     rating: 2,
-    reviewCount: 1,
+    countInStock: 10,
+    numReview: 1,
     sizes: ["300ml", "500ml"],
   },
   {
-    id: "7",
     name: "Test Product 7",
     image: "https://picsum.photos/600/600",
     description:
@@ -94,11 +93,11 @@ const products = [
     price: 99.99,
     hasSize: true,
     rating: 4.5,
-    reviewCount: 12,
+    countInStock: 10,
+    numReview: 12,
     sizes: [8, 9, 10, 11, 12, 13],
   },
   {
-    id: "8",
     name: "Test Product 8",
     image: "https://picsum.photos/600/600",
     description:
@@ -108,11 +107,11 @@ const products = [
     price: 9.99,
     hasSize: true,
     rating: 5,
-    reviewCount: 10,
+    countInStock: 10,
+    numReview: 10,
     sizes: [8, 9, 10, 11, 12, 13],
   },
   {
-    id: "9",
     name: "Test Product 9",
     image: "https://picsum.photos/600/600",
     description:
@@ -122,11 +121,11 @@ const products = [
     price: 49.99,
     hasSize: true,
     rating: 3,
-    reviewCount: 12,
+    countInStock: 10,
+    numReview: 12,
     sizes: [8, 9, 10, 11, 12, 13],
   },
   {
-    id: "10",
     name: "Test Product 10",
     image: "https://picsum.photos/600/600",
     description:
@@ -136,11 +135,11 @@ const products = [
     price: 79.99,
     hasSize: true,
     rating: 4.5,
-    reviewCount: 12,
+    countInStock: 10,
+    numReview: 12,
     sizes: [8, 9, 10, 11, 12, 13],
   },
   {
-    id: "11",
     name: "Test Product 11",
     image: "https://picsum.photos/600/600",
     description:
@@ -150,11 +149,11 @@ const products = [
     price: 9.99,
     hasSize: false,
     rating: 3.5,
-    reviewCount: 5,
+    countInStock: 10,
+    numReview: 5,
     sizes: ["30ml", "50ml"],
   },
   {
-    id: "12",
     name: "Test Product 12",
     image: "https://picsum.photos/600/600",
     description:
@@ -164,9 +163,9 @@ const products = [
     price: 4.99,
     hasSize: false,
     rating: 2,
-    reviewCount: 1,
-    sizes: ["30ml", "50ml"]
-
+    countInStock: 10,
+    numReview: 1,
+    sizes: ["30ml", "50ml"],
   },
 ];
 
