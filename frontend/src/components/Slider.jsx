@@ -124,7 +124,7 @@ const Slider = (props) => {
                   />
                 )}
                 {props.productCard && (
-                  <ProductCard name={d.name} price={d.price} image={d.image} id={d.id} />
+                  <ProductCard name={d.name} price={d.price} image={d.image} id={d._id} />
                 )}
                 {props.siteTestimonial && (
                   <SiteTestimonialCard
@@ -138,6 +138,7 @@ const Slider = (props) => {
                     name={d.name}
                     price={d.price}
                     image={d.image}
+                    id={d._id}
                     imageClassName={
                       isActive
                         ? classes.active

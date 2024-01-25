@@ -43,7 +43,7 @@ const ProductDetails = (props) => {
             <div>
               <Rating rating={Product.rating} />
             </div>
-            <div>({Product.reviewCount})</div>
+            <div>({Product.numReviews})</div>
           </div>
           <p>{Product.description}</p>
         </div>

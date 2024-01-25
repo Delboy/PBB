@@ -15,7 +15,7 @@ const Product3dCard = (props) => {
           <p>£{props.price}</p>
         </div>
         <Link
-          to={"/shop"}
+          to={`/product/${props.id}`}
           className={`${classes.productLink} ${classes.flexCenter}`}
         >
           View Product

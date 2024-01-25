@@ -20,7 +20,7 @@ const ProductList = () => {
                 name={product.name}
                 price={product.price}
                 image={product.image}
-                id={product.id}
+                id={product._id}
               />
             </Col>
           ))}
