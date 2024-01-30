@@ -101,7 +101,7 @@ const Slider = (props) => {
         centerInsufficientSlides
         slidesPerView={slidesPerView}
         breakpoints={breakpoints}
-        spaceBetween={15}
+        spaceBetween={props.product3d ? 0 : 15}
         pagination={{ clickable: true }}
         modules={modules}
         autoHeight

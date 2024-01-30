@@ -5,7 +5,7 @@ import classes from './Product3dCard.module.css'
 
 const Product3dCard = (props) => {
   return (
-    <>
+    <div className={classes.main}>
       <div className={`${classes.overlay}`}>
         <div
           className={`${classes.overlayBackground} ${classes.flexCenter}`}
@@ -26,7 +26,7 @@ const Product3dCard = (props) => {
         alt={props.name}
         className={props.imageClassName}
       />
-    </>
+    </div>
   );
 };
 
