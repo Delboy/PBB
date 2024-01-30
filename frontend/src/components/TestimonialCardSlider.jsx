@@ -70,7 +70,7 @@ const TestimonialCardSlider = (props) => {
 
   return (
     <>
-      <Slider data={dummyData} testimonialCard controls>
+      <Slider data={dummyData} testimonialCard controls loop={false} >
         <TestimonialCard image name review rating />
       </Slider>
     </>

@@ -1,22 +1,29 @@
 import { React } from "react";
+import { useGetProductsQuery } from "../slices/productsApiSlice";
 
-import FetchProducts from "../Hooks/FetchProducts";
 import Slider from "./Slider";
 
 const Product3dCarousel = () => {
 
-  const products = FetchProducts()
+  const { data: products, isLoading, error } = useGetProductsQuery();
 
   return (
-    <Slider
-      data={products}
-      product3d
-      autoplay
-      effect="coverflow"
-      coverflow
-      slidesPerView="auto"
-      loop
-    />
+    <>
+      {isLoading ? (
+        <h2>loading</h2>
+      ) : error ? (
+        <div> {error?.data?.message || error.error} </div>
+      ) : (
+        <Slider
+          data={products}
+          product3d
+          autoplay
+          effect="coverflow"
+          coverflow
+          loop={true}
+        />
+      )}
+    </>
   );
 };
 

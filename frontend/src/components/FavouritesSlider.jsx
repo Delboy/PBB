@@ -1,15 +1,14 @@
 import { React, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useGetProductsQuery } from "../slices/productsApiSlice";
 
-import FetchProducts from "../Hooks/FetchProducts";
 import Slider from "./Slider";
 
 import classes from "./FavouritesSlider.module.css";
 
 const FavouritesSlider = () => {
-
-  const products = FetchProducts();
+  const { data: products, isLoading, error } = useGetProductsQuery();
 
   const [gender, setGender] = useState("F");
   const [filteredList, setFilteredList] = useState([]);
@@ -36,12 +35,13 @@ const FavouritesSlider = () => {
 
   useEffect(() => {
     setFilteredList([]);
-
-    products.forEach((product) => {
-      if (product.gender === gender) {
-        setFilteredList((prevState) => [...prevState, product]);
-      }
-    });
+    if (products) {
+      products.forEach((product) => {
+        if (product.gender === gender) {
+          setFilteredList((prevState) => [...prevState, product]);
+        }
+      });
+    }
   }, [products, gender]);
 
   return (
@@ -67,29 +67,35 @@ const FavouritesSlider = () => {
           </div>
         </div>
       </div>
-      <AnimatePresence initial={false} mode="wait">
-        <motion.div
-          key={gender}
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{
-            delay: 0.2,
-            opacity: { duration: 1 },
-            y: { duration: 0.8 },
-          }}
-        >
-          <Slider
-            data={filteredList}
-            productCard
-            controls
-            slidesPerViewSm={2}
-            slidesPerViewMd={3}
-            slidesPerViewLg={4}
-            slidesPerViewXl={6}
-          />
-        </motion.div>
-      </AnimatePresence>
+      {isLoading ? (
+        <h2>loading</h2>
+      ) : error ? (
+        <div> {error?.data?.message || error.error} </div>
+      ) : (
+        <AnimatePresence initial={false} mode="wait">
+          <motion.div
+            key={gender}
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{
+              delay: 0.2,
+              opacity: { duration: 1 },
+              y: { duration: 0.8 },
+            }}
+          >
+            <Slider
+              data={filteredList}
+              productCard
+              controls
+              slidesPerViewSm={2}
+              slidesPerViewMd={3}
+              slidesPerViewLg={4}
+              slidesPerViewXl={6}
+            />
+          </motion.div>
+        </AnimatePresence>
+      )}
 
       <div className={classes.collectionLink}>
         <Link to={"/shop"}>
