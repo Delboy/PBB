@@ -2,6 +2,7 @@ import { React } from "react";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
 
 import Slider from "./Slider";
+import Loader from "./Loader";
 
 const Product3dCarousel = () => {
 
@@ -10,7 +11,7 @@ const Product3dCarousel = () => {
   return (
     <>
       {isLoading ? (
-        <h2>loading</h2>
+        <Loader />
       ) : error ? (
         <div> {error?.data?.message || error.error} </div>
       ) : (

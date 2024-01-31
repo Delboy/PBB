@@ -1,18 +1,17 @@
 import { React } from "react";
 import { Row, Col } from "react-bootstrap";
-
-// import FetchProducts from "../Hooks/FetchProducts";
-import ProductCard from "./ProductCard";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
 
+import Loader from "./Loader";
+import ProductCard from "./ProductCard";
+
 const ProductList = () => {
-  // const products = FetchProducts();
   const { data: products, isLoading, error } = useGetProductsQuery();
 
   return (
     <>
       {isLoading ? (
-        <h2>loading</h2>
+        <Loader />
       ) : error ? (
         <div>{ error?.data?.message || error.error }</div>
       ) : (

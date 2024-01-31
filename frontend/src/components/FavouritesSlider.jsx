@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
 
 import Slider from "./Slider";
+import Loader from "./Loader";
 
 import classes from "./FavouritesSlider.module.css";
 
@@ -68,7 +69,7 @@ const FavouritesSlider = () => {
         </div>
       </div>
       {isLoading ? (
-        <h2>loading</h2>
+        <Loader />
       ) : error ? (
         <div> {error?.data?.message || error.error} </div>
       ) : (

@@ -1,23 +1,11 @@
 import { React } from "react";
 import { useGetProductDetailsQuery } from "../slices/productsApiSlice";
 import { useParams } from "react-router-dom";
-// import axios from "axios";
 
+import Loader from "../components/Loader";
 import ProductDetails from "../components/ProductDetails";
 
 const ProductDetailsPage = () => {
-  // const [product, setProduct] = useState({});
-  // const [isLoading, setIsLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const fetchProduct = async () => {
-  //     const { data } = await axios.get(`/api/products/${productId}`);
-  //     setProduct(data);
-  //   };
-
-  //   fetchProduct();
-  //   setIsLoading(false)
-  // }, [productId]);
 
   const { id: productId } = useParams();
   const {
@@ -29,7 +17,7 @@ const ProductDetailsPage = () => {
   return (
     <>
       {isLoading ? (
-        <h2>loading</h2>
+        <Loader />
       ) : error ? (
         <div> {error?.data?.message || error.error} </div>
       ) : (
