@@ -3,6 +3,7 @@ import { useGetProductDetailsQuery } from "../slices/productsApiSlice";
 import { useParams } from "react-router-dom";
 
 import Loader from "../components/Loader";
+import Message from "../components/Message";
 import ProductDetails from "../components/ProductDetails";
 
 const ProductDetailsPage = () => {
@@ -19,7 +20,9 @@ const ProductDetailsPage = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <div> {error?.data?.message || error.error} </div>
+        <Message variant="danger">
+          {error?.data?.message || error.error}
+        </Message>
       ) : (
         <ProductDetails product={product} />
       )}

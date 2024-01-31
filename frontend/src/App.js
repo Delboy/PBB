@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header />
-      {location.pathname !== '/' ? <div style={{paddingTop: "4rem"}}></div> : null}
+      {location.pathname !== '/' ? <div style={{paddingTop: "4.5rem" }}></div> : null}
       <Outlet />
       <Footer />
     </>

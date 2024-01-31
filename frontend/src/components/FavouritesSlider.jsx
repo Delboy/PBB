@@ -5,6 +5,7 @@ import { useGetProductsQuery } from "../slices/productsApiSlice";
 
 import Slider from "./Slider";
 import Loader from "./Loader";
+import Message from "./Message";
 
 import classes from "./FavouritesSlider.module.css";
 
@@ -71,7 +72,9 @@ const FavouritesSlider = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <div> {error?.data?.message || error.error} </div>
+        <Message variant="danger">
+          {error?.data?.message || error.error}
+        </Message>
       ) : (
         <AnimatePresence initial={false} mode="wait">
           <motion.div

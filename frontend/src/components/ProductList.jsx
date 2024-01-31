@@ -3,6 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
 
 import Loader from "./Loader";
+import Message from "./Message";
 import ProductCard from "./ProductCard";
 
 const ProductList = () => {
@@ -13,7 +14,9 @@ const ProductList = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <div>{ error?.data?.message || error.error }</div>
+        <Message variant="danger">
+          {error?.data?.message || error.error}
+        </Message>
       ) : (
         <Row className="mt-4 p-4">
           <Col xs={0} md={2}>
