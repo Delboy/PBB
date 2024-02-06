@@ -14,15 +14,16 @@ const bagSlice = createSlice({
   reducers: {
     addToBag: (state, action) => {
       const item = action.payload;
+    
+      const existItem = state.bagItems.find((x) => x._id === item._id && x.size === item.size);
 
-      const existItem = state.bagItems.find((x) => x._id === item._id);
-
-      if (existItem) {
-        state.bagItems = state.bagItems.map((x) =>
-          x._id === existItem._id ? item : x
-        );
+      if(existItem){
+       // find item index
+       const itemIndex = state.bagItems.findIndex(x => x._id === existItem._id && x.size === item.size);
+       // update item qty to new total
+       state.bagItems[itemIndex].qty += item.qty;
       } else {
-        state.bagItems = [...state.bagItems, item];
+        state.bagItems = [...state.bagItems, item]
       }
 
       // item price
@@ -35,12 +36,14 @@ const bagSlice = createSlice({
 
       // total price
       state.totalPrice = (
-        Number(state.itemsPrice) + Number(state.shippingPrice).toFixed(2)
-      )
+        Number(state.itemsPrice) + Number(state.shippingPrice)
+      ).toFixed(2);
 
-      localStorage.setItem('cart', JSON.stringify(state))
+      localStorage.setItem("bag", JSON.stringify(state));
     },
   },
 });
+
+export const { addToBag } = bagSlice.actions;
 
 export default bagSlice.reducer;

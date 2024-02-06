@@ -25,12 +25,13 @@ const ProductList = () => {
           <Col xs={12} md={10}>
             <Row>
               {products.map((product) => (
-                <Col xs={6} lg={4} xl={3} key={product.id}>
+                <Col xs={6} lg={4} xl={3}>
                   <ProductCard
                     name={product.name}
                     price={product.price}
                     image={product.image}
                     id={product._id}
+                    key={product._id}
                   />
                 </Col>
               ))}
