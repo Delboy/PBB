@@ -1,0 +1,23 @@
+.container {
+    position: relative;
+}
+
+.dot {
+    position: absolute;
+    height: .5rem;
+    width: .5rem;
+    border: 1px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: black;
+   
+    top: .6rem;
+    right: 0;
+}
+
+@media (max-width: 768px) {
+    .dot {
+        top: .45rem;
+        right: -.05rem;
+    }
+}

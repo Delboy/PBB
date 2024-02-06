@@ -1,9 +1,9 @@
 import { React, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { IoBagOutline } from "react-icons/io5";
 import { FaMagnifyingGlass, FaRegUser } from "react-icons/fa6";
 
+import BagIcon from "./BagIcon";
 import useWindowResize from "../Hooks/UseWindowResize";
 
 import MainNav from "./MainNav";
@@ -64,7 +64,7 @@ const Header = () => {
       linkTo: "#",
     },
     {
-      title: <IoBagOutline />,
+      title: <BagIcon />,
       linkTo: "#",
     },
   ];
