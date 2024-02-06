@@ -19,7 +19,7 @@ const bagSlice = createSlice({
 
       if(existItem){
        // find item index
-       const itemIndex = state.bagItems.findIndex(x => x._id === existItem._id && x.size === item.size);
+       const itemIndex = state.bagItems.findIndex(x => x._id === existItem._id && x.size === existItem.size);
        // update item qty to new total
        state.bagItems[itemIndex].qty += item.qty;
       } else {
