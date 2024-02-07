@@ -18,6 +18,7 @@ const ProductDetails = (props) => {
   );
 
   const [disableIncrease, setDisableIncrease] = useState(false);
+  const [disableAddToBag, setDisableAddToBag] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -26,8 +27,15 @@ const ProductDetails = (props) => {
       (x) => x._id === product._id && x.size === sizeSelection
     );
 
+    // Disables increase quantity and add to bag buttons if the total in bag exceeds qty in stock
     if (index !== -1) {
       const qtyInBag = bagItems[index].qty;
+      if (qtyInBag === product.countInStock) {
+        setDisableAddToBag(true);
+      } else {
+        setDisableAddToBag(false);
+      }
+
       if (qty + qtyInBag >= product.countInStock) {
         setDisableIncrease(true);
       } else {
@@ -35,8 +43,12 @@ const ProductDetails = (props) => {
       }
     } else if (product.countInStock === qty) {
       setDisableIncrease(true);
+      setDisableAddToBag(false);
+
     } else {
       setDisableIncrease(false);
+      setDisableAddToBag(false);
+
     }
   }, [bagItems, product._id, product.countInStock, qty, sizeSelection]);
 
@@ -116,8 +128,9 @@ const ProductDetails = (props) => {
             className={classes.cartBtn}
             type="button"
             onClick={addToBagHandler}
+            disabled={disableAddToBag}
           >
-            add to cart
+            {disableAddToBag ? "maximum amount in bag reached" : "add to cart"}
           </button>
         </div>
       </div>
