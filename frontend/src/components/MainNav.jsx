@@ -6,13 +6,12 @@ import { MdOutlineMenu } from "react-icons/md";
 import useWindowResize from "../Hooks/UseWindowResize";
 
 import List from "./List";
+import SideDrawer from "./SideDrawer";
 import SideNav from "./SideNav";
-import Backdrop from "./Backdrop";
 
 import classes from "./MainNav.module.css";
-import { AnimatePresence } from "framer-motion";
 
-function MainNav() {
+const MainNav = () => {
   const size = useWindowResize();
 
   const [sideNavOpen, setSideNavOpen] = useState(false);
@@ -23,22 +22,22 @@ function MainNav() {
 
   const listItems = [
     {
-        title: "Home",
-        linkTo: '/'
+      title: "Home",
+      linkTo: "/",
     },
     {
-        title: "Shop",
-        linkTo: '/shop'
+      title: "Shop",
+      linkTo: "/shop",
     },
     {
-        title: "About",
-        linkTo: '/about'
+      title: "About",
+      linkTo: "/about",
     },
     {
-        title: "Contact",
-        linkTo: '/contact'
+      title: "Contact",
+      linkTo: "/contact",
     },
-  ]
+  ];
 
   return (
     <nav className={classes.nav}>
@@ -50,12 +49,9 @@ function MainNav() {
             className={classes.hamburger}
             onClick={hamburgerHandler}
           />
-          <AnimatePresence>
-          {sideNavOpen && <Backdrop onClick={hamburgerHandler} open={sideNavOpen} />}
-          </AnimatePresence>
-          <AnimatePresence>
-          {sideNavOpen && <SideNav onClick={hamburgerHandler} listItems={listItems} />}
-          </AnimatePresence>
+          <SideDrawer openStatus={sideNavOpen} closeHandler={hamburgerHandler} >
+            <SideNav listItems={listItems} />
+          </SideDrawer>
         </>
       )}
     </nav>
