@@ -11,6 +11,8 @@ import Logo from "./Logo";
 import List from "./List";
 
 import classes from "./Header.module.css";
+import SideDrawer from "./SideDrawer";
+import CheckOutSide from "./CheckOutSide";
 
 const Header = () => {
   const size = useWindowResize();
@@ -33,11 +35,10 @@ const Header = () => {
 
   useEffect(() => {
     if (location.pathname === "/") {
-      setOnHome(true)
-      setSolidBg(false)
-      ;
+      setOnHome(true);
+      setSolidBg(false);
     } else {
-      setOnHome(false)
+      setOnHome(false);
       setSolidBg(true);
     }
   }, [location]);
@@ -54,6 +55,12 @@ const Header = () => {
     }
   };
 
+  const [bagOpen, setBagOpen] = useState();
+
+  const onClickHandler = () => {
+    setBagOpen(!bagOpen);
+  };
+
   const listItems = [
     {
       title: <FaRegUser />,
@@ -66,31 +73,39 @@ const Header = () => {
     {
       title: <BagIcon />,
       linkTo: "#",
+      onClick: onClickHandler,
     },
   ];
 
   return (
-    <header
-      className={solidBg ? classes.solidBg : null}
-      onMouseOver={mouseOverHandler}
-      onMouseLeave={mouseLeaveHandler}
-    >
-      <div className={classes.leftSection}>
-        <div style={{ display: size.width < 1200 ? "none" : null }}>
+      <header
+        className={solidBg ? classes.solidBg : null}
+        onMouseOver={mouseOverHandler}
+        onMouseLeave={mouseLeaveHandler}
+      >
+        <div className={classes.leftSection}>
+          <div style={{ display: size.width < 1200 ? "none" : null }}>
+            <Logo />
+          </div>
+          <div style={{ order: size.width > 1200 ? 2 : 1 }}>
+            <MainNav />
+          </div>
+        </div>
+        <div style={{ display: size.width > 1200 ? "none" : null }}>
           <Logo />
         </div>
-        <div style={{ order: size.width > 1200 ? 2 : 1 }}>
-          <MainNav />
-        </div>
-      </div>
-      <div style={{ display: size.width > 1200 ? "none" : null }}>
-        <Logo />
-      </div>
 
-      <div className={`${classes.nav} ${classes.icons}`}>
-        <List listItems={listItems} />
-      </div>
-    </header>
+        <div className={`${classes.nav} ${classes.icons}`}>
+          <List listItems={listItems} />
+        </div>
+        <SideDrawer
+          openStatus={bagOpen}
+          closeHandler={onClickHandler}
+          rightSide
+        >
+          <CheckOutSide />
+        </SideDrawer>
+      </header>
   );
 };
 

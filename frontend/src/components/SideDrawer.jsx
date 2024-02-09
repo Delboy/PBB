@@ -7,7 +7,7 @@ import classes from "./SideDrawer.module.css";
 
 const SideDrawer = (props) => {
   const animation = {
-    initial: { x: props.rightSide ? "22rem" : "-22rem" },
+    initial: { x: props.rightSide ? "25rem" : "-22rem" },
     animate: {
       x: 0,
       transition: {
@@ -17,7 +17,7 @@ const SideDrawer = (props) => {
       },
     },
     exit: {
-      x: props.rightSide ? "22rem" : "-22rem",
+      x: props.rightSide ? "25rem" : "-22rem",
       transition: {
         type: "tween",
         ease: [0.645, 0.0045, 0.355, 1],
@@ -47,7 +47,7 @@ const SideDrawer = (props) => {
               animate="animate"
               exit="exit"
             >
-              <button className={classes.exit} onClick={props.closeHandler}>
+              <button className={`${classes.exit} ${props.rightSide ? classes.black : classes.white}`} onClick={props.closeHandler}>
                 X
               </button>
               {props.children}

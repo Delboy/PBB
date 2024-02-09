@@ -1,0 +1,37 @@
+.qtyBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid lightgrey;
+    width: 9rem;
+    color: grey;
+}
+
+.qtyBtn button, .qtyBtn p {
+    padding: .5rem 1rem;
+    width: 2rem;
+}
+
+.qtyBtn button {
+    background: none;
+    border: none;
+}
+
+.qtyBtn p {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0 !important;
+    color: black;
+    /* width: 2rem; */
+}
+
+@media (max-width: 485px) {
+    .small {
+        width: 5rem !important;
+    }
+
+    .small p {
+        padding: 0;
+    }
+
+}

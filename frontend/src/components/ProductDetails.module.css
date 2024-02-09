@@ -81,31 +81,13 @@
     cursor: pointer;
 }
 
-.qtyBtn, .cartBtn {
+.cartBtn {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid lightgrey;
     width: 9rem;
     color: grey;
-}
-
-.qtyBtn button, .qtyBtn p {
-    padding: .5rem 1rem;
-    width: 33.3%;
-}
-
-.qtyBtn button {
-    background: none;
-    border: none;
-}
-
-.qtyBtn p {
-    margin-bottom: 0;
-    color: black
-}
-
-.cartBtn {
     margin-top: 1rem;
     padding: .75rem 0;
     font-size: .9rem;

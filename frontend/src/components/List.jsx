@@ -13,7 +13,7 @@ function List(props) {
           className={`${props.divider ? classes.divider : null} ${
             props.small ? classes.small : null
           }`}
-          onClick={props.onClick}
+          onClick={listItem.onClick}
         >
           {listItem.title}
         </li>

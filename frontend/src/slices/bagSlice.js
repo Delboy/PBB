@@ -29,9 +29,23 @@ const bagSlice = createSlice({
 
       return updateCart(state);
     },
+    adjustItemQty: (state, action) => {
+      // find item
+      const item = action.payload.product;
+      const itemIndex = state.bagItems.findIndex((x) => x._id === item._id && x.size === item.size);
+
+      // Get amount to adjust 
+      const amount = action.payload.amount;
+
+      // adjust qty of item by payload
+      state.bagItems[itemIndex].qty += amount;
+
+      return updateCart(state)
+
+    }
   },
 });
 
-export const { addToBag } = bagSlice.actions;
+export const { addToBag, adjustItemQty } = bagSlice.actions;
 
 export default bagSlice.reducer;
