@@ -10,7 +10,11 @@ export const updateCart = (state) => {
       );
 
       // shipping price
-      state.shippingPrice = addDecimals(state.itemsPrice >= 100 ? 0 : 10);
+      if(state.bagItems.length !== 0){
+        state.shippingPrice = addDecimals(state.itemsPrice >= 100 ? 0 : 10);
+      } else {
+        state.shippingPrice = null;
+      }
 
       // total price
       state.totalPrice = (

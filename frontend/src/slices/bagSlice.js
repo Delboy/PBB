@@ -42,10 +42,17 @@ const bagSlice = createSlice({
 
       return updateCart(state)
 
+    },
+    removeItem: (state, action) => {
+      const item = action.payload.product;
+      const itemIndex = state.bagItems.findIndex((x) => x._id === item._id && x.size === item.size);
+      state.bagItems.splice(itemIndex, 1)
+
+      return updateCart(state)
     }
   },
 });
 
-export const { addToBag, adjustItemQty } = bagSlice.actions;
+export const { addToBag, adjustItemQty, removeItem } = bagSlice.actions;
 
 export default bagSlice.reducer;

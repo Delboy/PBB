@@ -1,5 +1,5 @@
 import React from "react";
-import { adjustItemQty } from "../slices/bagSlice";
+import { adjustItemQty, removeItem } from "../slices/bagSlice";
 import { useDispatch } from "react-redux";
 
 import { Link } from "react-router-dom";
@@ -16,6 +16,10 @@ const CheckOutSideItem = (props) => {
     const amount = Number(e.target.value);
     dispatch(adjustItemQty({ product, amount }));
   };
+
+  const removeItemHandler = () => {
+    dispatch(removeItem({product}))
+  }
 
   return (
     <div className={classes.main}>
@@ -39,7 +43,7 @@ const CheckOutSideItem = (props) => {
             disablePlus={product.qty === product.countInStock}
           />
 
-          <button>remove</button>
+          <button onClick={removeItemHandler}>remove</button>
         </div>
       </div>
     </div>
