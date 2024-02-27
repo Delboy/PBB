@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import CheckOutSideItem from "./CheckOutSideItem";
 
@@ -9,6 +10,12 @@ import classes from "./CheckOutSide.module.css";
 const CheckOutSide = () => {
   const bag = useSelector((state) => state.bag);
   const { bagItems } = bag;
+
+  const navigate = useNavigate();
+
+  const checkoutHandler = () => {
+    navigate('/login?redirect=/checkout');
+  }
 
   return (
     <div className={classes.main}>
@@ -38,9 +45,7 @@ const CheckOutSide = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                <CheckOutSideItem
-                  item={item}
-                />
+                <CheckOutSideItem item={item} />
               </motion.div>
             </AnimatePresence>
           ))}
@@ -54,7 +59,9 @@ const CheckOutSide = () => {
             exit={{ opacity: 0, y: 100 }}
             transition={{ duration: 0.5 }}
           >
-            <button>
+            <button disabled={bagItems.length === 0} 
+              onClick={checkoutHandler}
+              >
               Checkout <div className={classes.dot}></div> £{bag.totalPrice}
             </button>
           </motion.div>
